@@ -32,6 +32,7 @@ class VillaController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
+            'foto' => 'required|image|max:2048',
             'namavilla' => 'required',
             'fasilitas' => 'required',
             'kapasitas' => 'required',
@@ -45,6 +46,13 @@ class VillaController extends Controller
         ]);
 
         $villa = new villa();
+        if ($request->hasFile('foto')) {
+            $villa->deleteImage(); //menghapus image sebelum di update melalui method deleteImage di model
+            $image = $request->file('foto');
+            $name = rand(1000, 9999) . $image->getClientOriginalName();
+            $image->move('images/foto/', $name);
+            $villa->foto = $name;
+        }
         $villa->namavilla = $request->namavilla;
         $villa->fasilitas = $request->fasilitas;
         $villa->kapasitas = $request->kapasitas;
@@ -94,6 +102,7 @@ class VillaController extends Controller
     public function update(Request $request, $id)
     {
         $validated = $request->validate([
+            'foto' => 'required|image|max:2048',
             'namavilla' => 'required',
             'fasilitas' => 'required',
             'kapasitas' => 'required',
@@ -107,6 +116,12 @@ class VillaController extends Controller
         ]);
 
         $villa = villa::findOrFail($id);
+        if ($request->hasFile('foto')) {
+            $image = $request->file('foto');
+            $name = rand(1000, 9999) . $image->getClientOriginalName();
+            $image->move('images/image/', $name);
+            $villa->foto = $name;
+        }
         $villa->namavilla = $request->namavilla;
         $villa->fasilitas = $request->fasilitas;
         $villa->kapasitas = $request->kapasitas;

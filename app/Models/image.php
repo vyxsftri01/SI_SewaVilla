@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class image extends Model
 {
-    protected $table = 'image';
+     protected $table = 'image';
 
     // public $fillable = ['foto'];
     public $timestamps = true;

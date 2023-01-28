@@ -13,6 +13,16 @@
                         <form action="{{ route('villa.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-3">
+                                <label class="form-label">Foto</label>
+                                <input type="file" class="form-control  @error('foto') is-invalid @enderror"
+                                    name="foto">
+                                @error('foto')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="mb-3">
                                 <label class="form-label">nama villa</label>
                                 <input type="text" class="form-control  @error('namavilla') is-invalid @enderror"
                                     name="namavilla">

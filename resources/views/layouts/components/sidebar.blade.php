@@ -61,6 +61,18 @@
                   <p>Villa </p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{ route('halaman.index') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Halaman </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('galeri_hal.index') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Galeri </p>
+                </a>
+              </li>
             </ul>
           </li>
          

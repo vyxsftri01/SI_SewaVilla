@@ -5,10 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class villa extends Model
+class GaleriHal extends Model
 {
-   
-    protected $table = 'villa';
+    protected $table = 'galeri_hal';
 
     // public $fillable = ['foto'];
     public $timestamps = true;

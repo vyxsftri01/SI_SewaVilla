@@ -3,6 +3,10 @@
 use App\Http\Controllers\KotaController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\VillaController;
+use App\Http\Controllers\HalamanController;
+use App\Http\Controllers\GaleriHalController;
+use App\Http\Controllers\VillaroomController;
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,16 +20,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/villaroom', function () {
-    return view('villaroom');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
 
 Route::resource('kota',KotaController::class);
 Route::resource('image',ImageController::class);
 Route::resource('villa',VillaController::class);
+Route::resource('halaman',HalamanController::class);
+Route::resource('galeri_hal',GaleriHalController::class);
+Route::resource('/villaroom',VillaroomController::class);
+Route::resource('/',WelcomeController::class);
 
 Auth::routes();
 

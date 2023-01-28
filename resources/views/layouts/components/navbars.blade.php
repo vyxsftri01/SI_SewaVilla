@@ -10,7 +10,7 @@
             <li class="nav-item" ><a href="/" class="nav-link" >Halaman</a></li>
             <li class="nav-item"><a href="#" class="nav-link">Tentang</a></li>
             
-            <li class="nav-item"><a href="/villaroom" class="nav-link">Villa</a></li>
+            <li class="nav-item"><a href="{{url('villaroom')}}" class="nav-link">Villa</a></li>
           
         </ul>
         <div class="app-navbar-item ms-1 ms-lg-3" id="kt_header_user_menu_toggle" >

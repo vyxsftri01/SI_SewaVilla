@@ -1,19 +1,19 @@
 @extends('layouts.user')
 
 @section('content')
-
+@foreach ($data as $data) 
 <div class="hero-wrap js-fullheight" style="background-image: url('{{asset('assetn/images/bgvilla.jpg')}}');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start" data-scrollax-parent="true">
           <div class="col-md-7 ftco-animate">
-          	<h2 class="subheading">Selamat datang di Hereath Villa</h2>
-          	<h1 class="mb-4">Informasi Penyewaaan Villa</h1>
+          	<h2 class="subheading">{{ $data->title }}</h2>
+          	<h1 class="mb-4">{{ $data->judul }}</h1>
           </div>
           </div>
       </div>
 </div>
-
+@endforeach
 
    
     <section class="ftco-section ftco-services">
@@ -58,9 +58,17 @@
       <div class="container">
         <div class="row justify-content-center pb-5 mb-3">
           <div class="col-md-7 heading-section text-center ftco-animate">
-            <h2>Happy Clients &amp; Feedbacks</h2>
+            <h2>{{ $data->destitle }}</h2>
+            <h4>{{ $data->deskripsi}}</h4>
+            <p></p>
           </div>
         </div>
+        <hr>
+        <center>
+          <h1 class="mb-4">Lokasi Villa eArther</h1>
+        </center>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.8495568013163!2d107.60861261424391!3d-6.908586069531614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e637c1c36e73%3A0x9253217aae9c858d!2sBandung%20Indah%20Plaza!5e0!3m2!1sid!2sid!4v1674870382221!5m2!1sid!2sid" 
+        width="1280" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         {{-- <div class="row ftco-animate">
           <div class="col-md-12">
           <center>

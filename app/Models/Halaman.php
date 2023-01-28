@@ -5,10 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class villa extends Model
+class Halaman extends Model
 {
-   
-    protected $table = 'villa';
+    protected $table = 'halaman';
 
     // public $fillable = ['foto'];
     public $timestamps = true;
@@ -30,4 +29,5 @@ class villa extends Model
                return unlink(public_path('images/foto/' . $this->foto));
            }
        }
+
 }
